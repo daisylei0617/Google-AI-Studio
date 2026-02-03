@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Page } from '../App';
+import { Page } from '../App.tsx';
 import { ChevronRight, Linkedin, Instagram } from 'lucide-react';
 
 interface HomeProps {
@@ -35,7 +35,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
               onClick={() => onNavigate(Page.PROJECTS)}
               className="gold-bg text-black px-10 py-4 font-bold tracking-widest text-xs flex items-center group transition-transform active:scale-95"
             >
-              VIEW PORTFOLIO
+              查看作品集
               <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
             
@@ -44,22 +44,22 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
               className="text-gray-400 hover:text-white transition-colors text-xs tracking-widest flex items-center gap-3 uppercase font-semibold"
             >
               <span className="w-8 h-[1px] bg-gray-600"></span>
-              Case Studies
+              核心案例
             </button>
           </div>
 
           <div className="grid grid-cols-2 gap-12 pt-12 border-t border-white/10 max-w-md">
             <div>
-              <h4 className="text-[10px] tracking-[0.3em] text-gray-500 font-bold mb-3 uppercase">Core Experience</h4>
+              <h4 className="text-[10px] tracking-[0.3em] text-gray-500 font-bold mb-3 uppercase">核心领域</h4>
               <ul className="text-xs space-y-2 text-gray-300">
-                <li className="flex items-center gap-2">• Large Language Models (LLM)</li>
-                <li className="flex items-center gap-2">• Global Live Ecosystems</li>
+                <li className="flex items-center gap-2">• 大语言模型 (LLM)</li>
+                <li className="flex items-center gap-2">• 全球直播生态</li>
               </ul>
             </div>
             <div>
-              <h4 className="text-[10px] tracking-[0.3em] text-gray-500 font-bold mb-3 uppercase">Trajectory</h4>
+              <h4 className="text-[10px] tracking-[0.3em] text-gray-500 font-bold mb-3 uppercase">职业路径</h4>
               <p className="text-xs text-gray-300 leading-relaxed">
-                From financial modeling to engineering high-growth AI products for millions of users.
+                从金融建模到为全球数亿用户打造高增长的 AI 产品。
               </p>
             </div>
           </div>
