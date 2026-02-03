@@ -1,11 +1,11 @@
 
-import React, { useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Footer from './components/Footer';
+import React, { useState } from 'react';
+import Navbar from './components/Navbar.tsx';
+import Home from './components/Home.tsx';
+import Experience from './components/Experience.tsx';
+import Projects from './components/Projects.tsx';
+import Skills from './components/Skills.tsx';
+import Footer from './components/Footer.tsx';
 
 export enum Page {
   HOME = 'home',
@@ -19,12 +19,13 @@ const App: React.FC = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const navigateTo = (page: Page) => {
+    if (page === currentPage) return;
     setIsTransitioning(true);
     setTimeout(() => {
       setCurrentPage(page);
       window.scrollTo(0, 0);
       setIsTransitioning(false);
-    }, 300);
+    }, 400);
   };
 
   const renderPage = () => {
@@ -43,10 +44,10 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col selection:bg-yellow-500 selection:text-black">
+    <div className="min-h-screen flex flex-col selection:bg-yellow-500 selection:text-black bg-[#0a0a0a]">
       <Navbar currentPage={currentPage} onNavigate={navigateTo} />
       
-      <main className={`flex-grow transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+      <main className={`flex-grow transition-all duration-500 ease-in-out ${isTransitioning ? 'opacity-0 scale-[0.98] blur-sm' : 'opacity-100 scale-100 blur-0'}`}>
         {renderPage()}
       </main>
 

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Page } from '../App';
+import { Page } from '../App.tsx';
 
 interface NavbarProps {
   currentPage: Page;
@@ -9,9 +9,9 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
   const navItems = [
-    { label: 'EXPERIENCE', page: Page.EXPERIENCE },
-    { label: 'PROJECTS', page: Page.PROJECTS },
-    { label: 'EXPERTISE', page: Page.SKILLS },
+    { label: '履历', page: Page.EXPERIENCE },
+    { label: '项目', page: Page.PROJECTS },
+    { label: '技能', page: Page.SKILLS },
   ];
 
   return (
@@ -39,7 +39,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
           onClick={() => onNavigate(Page.SKILLS)}
           className="px-6 py-2 border border-white text-xs tracking-widest hover:bg-white hover:text-black transition-all"
         >
-          CONNECT
+          联系我
         </button>
       </div>
     </nav>
